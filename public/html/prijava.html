@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Prijava</title>
+    <link rel="stylesheet" href="/css/prijava.css">
+  </head>
+  <body>
+    <header>
+        <iframe src="/html/meni.html" class="no-scroll"></iframe>
+    </header>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username"><br>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password"><br>
+
+    <button id="loginButton">Log In</button>
+
+    <script src="../scripts/PoziviAjax.js"></script>
+
+    <script> 
+      // window.reload(true);
+        document.getElementById("loginButton").addEventListener("click", prijava);
+      async function prijava() {
+       // console.log("pozvala se")
+        let username = document.getElementById("username").value
+        let password = document.getElementById("password").value
+        let poziviAjax = PoziviAjax
+        poziviAjax.postLogin(username,password,function(error, data){
+          if(error) console.log(error)
+         // else {location.reload(true)}
+        });
+      /*  poziviAjax.getNekretnine(function(error,data){
+          if(error)console.log(error);
+          else console.log(data);
+        })*/
+       /* poziviAjax.getKorisnik(function(error,data){
+          if(error)console.log(error);
+          else console.log(data);
+        })*/
+      }
+    </script>
+  </body>
+</html>

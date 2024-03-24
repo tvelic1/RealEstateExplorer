@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Main Page</title>
+    <link href="../css/meni.css" rel="stylesheet">
+</head>
+<body>
+    <ul id="glavniMeni">
+        
+        <li><a href="/nekretnine.html" target="_blank">Nekretnine</a></li>
+        <li><a href="/prijava.html" target="_blank">Prijava</a></li>
+       <script src="../scripts/PoziviAjax.js"></script>
+
+    <script>
+       // document.getElementById("loginButton").addEventListener("click", prijava);
+     async  function odjavi() {
+
+        let poziviAjax = PoziviAjax
+       /* poziviAjax.getKorisnik(function(error,data){
+          if(error) console.log(error);
+          else console.log(data);
+        })*/
+        await poziviAjax.postLogout(function(error, data){
+          if(error) console.log("ne valja")
+          //else location.reload(true);
+        });
+      }
+    </script>
+    
+</body>
+</html>

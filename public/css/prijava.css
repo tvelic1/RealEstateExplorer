@@ -1,0 +1,67 @@
+.no-scroll{
+    overflow: hidden;
+}
+html{
+    background-color: #fdf1d3;
+}
+header iframe{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    background-color:  #fdf1d3;
+    overflow: hidden;
+    border: 1px;
+    width:100%;
+    height: 50px;
+}
+body{
+    margin-top:50px;
+}
+
+main {
+    text-align: center;
+}
+
+#loginForm {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    margin-left: 50px;
+
+}
+
+input {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 50px;
+
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+margin-left: 50px;
+}
+
+button:hover {
+    background-color: #45a049;
+}

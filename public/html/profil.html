@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" type="text/css" href="../css/profil.css">
+</head>
+<body>
+    <header>
+        <iframe src="meni.html"></iframe>
+    </header>
+    
+   
+        <img src="../slike/download.png" alt="Slika1" class="image-above" width="150">
+   
+
+   
+        <div class="podaci">
+            <div class="lijevo">
+                <label for="ime" class="label">Ime</label>
+                <label for="prezime" class="label">Prezime</label>
+                <label for="username" class="label">Username</label>
+                <label for="password" class="label">Password</label>
+            </div>
+            <div class="desno">
+                <input type="text" id="ime" placeholder="Input Field" class="input">
+                <input type="text" id="prezime" placeholder="Input Field" class="input">
+                <input type="text" id="username" placeholder="Input Field" class="input">
+                <input type="password" id="password" placeholder="Input Field" class="input" readonly> <!--password promijenite preko postmana-->
+    
+            </div>
+            <button id="updateButton">Update</button>
+
+        
+    </div>
+    <script src="../scripts/PoziviAjax.js"></script>
+
+    <script>
+        
+        window.onload = async function() {
+            let a=PoziviAjax
+
+            a.getKorisnik(function(error, korisnik) {
+                if (error) {
+                    console.error("Greška prilikom dohvaćanja korisnika:", error);
+                } else {
+                    document.getElementById("ime").value = korisnik.ime || "";
+                    document.getElementById("prezime").value = korisnik.prezime || "";
+                    document.getElementById("username").value = korisnik.username || "";
+                    document.getElementById("password").value = korisnik.password || ""; 
+
+                }
+            });
+        };
+    </script>
+    <script>
+                document.getElementById("updateButton").addEventListener("click", update);
+      async function update() {
+       // console.log("pozvala se")
+        let username1 = document.getElementById("username").value
+        let ime11 = document.getElementById("ime").value
+        let prezime1 = document.getElementById("prezime").value
+        //let pas = document.getElementById("password").value
+
+        const podaci = {
+  ime: ime11,
+  prezime: prezime1,
+  username: username1
+};
+
+        let poziviAjax = PoziviAjax
+        poziviAjax.putKorisnik(podaci,function(error, data){
+          if(error) console.log("ne valja")
+          else location.reload(true)
+        });}
+    </script>
+</body>
+</html>

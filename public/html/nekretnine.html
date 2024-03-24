@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Nekretnine</title>
+    <link rel="stylesheet" href="../css/nekretnine.css">
+  </head>
+  <body>
+    <header>
+        <iframe src="/html/meni.html" class="no-scroll" type="module"></iframe>
+    </header>
+    <input placeholder="Min Cijena" id="min_cijena"><br>
+    <input placeholder="Max Cijena" id="max_cijena"><br>
+    <input placeholder="Min Kvadratura" id="min_kvadratura"><br>
+    <input placeholder="Max Kvadratura" id="max_kvadratura"><br>
+    <button id="filtriranje">Filtriraj</button>
+    <div id="kontejner">
+    <div id="stan">
+        
+    </div>
+    <div id="kuca">
+        
+    </div>
+    <div id="pp">
+       
+    </div>
+  </div>
+
+    <script  src="../scripts/SpisakNekretnina.js"></script> 
+    <script src="../scripts//PoziviAjax.js"></script>
+    <script src="../scripts/MarketingAjax.js"></script>
+    <script  src="../scripts/nekretnine.js"></script>
+    <script src="../scripts/spojiDetalje.js"></script>
+
+ 
+   <!--<button id="updateButton">Update</button>--> 
+
+
+   <!--  <script>
+        document.getElementById("login34Button").addEventListener("click", prrijava);
+      function prrijava() {
+        console.log("pozvala se")
+       // let username = document.getElementById("username").value
+        //let password = document.getElementById("password").value
+        let poziviAjax = PoziviAjax
+        const noviPodaci={
+          ime: 'Novo Ime'
+        }
+        poziviAjax.putKorisnik(noviPodaci,function(error, data){
+          if(error) console.log("ne valja")
+          else console.log(data)
+        });
+      /*  poziviAjax.getNekretnine(function(error,data){
+          if(error)console.log(error);
+          else console.log(data);
+        })*/
+        /*poziviAjax.getKorisnik(function(error,data){
+          if(error)console.log(error);
+          else console.log(data);
+        })*/
+      }
+    </script>-->
+
+  </body>
+</html>
