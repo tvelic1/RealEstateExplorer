@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const fs = require('fs').promises;
-const baza = require('./baza.js')
+const baza = require('./database/baza')
 
 const app = express();
 app.use(express.static('public'))
