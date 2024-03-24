@@ -1,5 +1,5 @@
 ## RealEstateExplorer
-Node.js + JavaScript Full-Stack application
+Node.js + JavaScript Full-Stack application. </br>
 This aplication allows users to add reservations, to see details about every real estate.
 Also users can see reviews of other users for every estate, and they can publish their own opinions about their experiences.
 Real estate can be filtered by wanted criteria.
